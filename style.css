@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0; /* Loại bỏ khoảng trống mặc định */
+    padding: 0; /* Loại bỏ khoảng trống mặc định */
+}
+
+.container {
+    text-align: center;
+    width: 90%; /* Giảm chiều rộng cho các thiết bị di động */
+}
+
+.answer {
+    padding: 15px 30px; /* Điều chỉnh padding để nút lớn hơn và dễ nhấn */
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%; /* Nút chiếm toàn bộ chiều rộng */
+    max-width: 200px; /* Giới hạn chiều rộng tối đa */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng cho nút */
+    border: none; /* Xóa viền mặc định */
+    border-radius: 5px; /* Làm mềm góc */
+    background-color: #4CAF50; /* Màu nền cho nút muốn */
+    color: white; /* Màu chữ */
+    transition: background-color 0.3s; /* Thêm hiệu ứng chuyển màu */
+}
+
+.answer:hover {
+    background-color: #45a049; /* Tối màu khi hover */
+}
+.result {
+    margin-top: 20px;
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của khung chứa */
+    height: auto; /* Tự động điều chỉnh chiều cao để duy trì tỷ lệ */
+    opacity: 0; /* Bắt đầu với độ mờ */
+    transition: opacity 1s ease-in; /* Hiệu ứng chuyển tiếp */
+}
+/* Thông báo ban đầu ẩn đi */
+.hidden {
+    display: none;
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Hiện thông báo với hiệu ứng */
+.notification.show {
+    display: block;
+    opacity: 3;
+    transform: translate(-50%, -50%) scale(1);
+}
